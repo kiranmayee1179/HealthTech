@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #020617;
+    color: #f8fafc;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(13, 148, 136, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.8) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(20, 184, 166, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+/* Custom Color Theme Utilities */
+:root {
+  --color-health-50: #f0fdfa;
+  --color-health-100: #ccfbf1;
+  --color-health-200: #99f6e4;
+  --color-health-300: #5eead4;
+  --color-health-400: #2dd4bf;
+  --color-health-500: #14b8a6;
+  --color-health-600: #0d9488;
+  --color-health-700: #0f766e;
+  --color-health-800: #115e59;
+  --color-health-900: #134e4a;
+  --color-health-950: #042f2e;
+}
+
+/* Glassmorphism card utilities */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-light {
+  background: rgba(30, 41, 59, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.glass-card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-2px);
+  border-color: rgba(45, 212, 191, 0.3);
+  box-shadow: 0 12px 24px -10px rgba(13, 148, 136, 0.25);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(51, 65, 85, 0.8);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(13, 148, 136, 0.7);
+}
+
+/* Breathing animation indicator */
+@keyframes breathCircle {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.4); opacity: 1; filter: drop-shadow(0 0 16px rgba(45, 212, 191, 0.6)); }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+.animate-breath {
+  animation: breathCircle 6s ease-in-out infinite;
+}
